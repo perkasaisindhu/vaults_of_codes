@@ -1,0 +1,71 @@
+WEEK-2
+ASSIGNMENT-2
+1.	. Write a program to count word frequencies in a given text.
+
+def count_word_frequencies(text):
+    words = text.split()
+    word_freq = {}
+    for word in words:
+        word = word.strip('.,!?"\'')
+        word = word.lower()
+        if word:
+            word_freq[word] = word_freq.get(word, 0) + 1
+    return word_freq
+text = """Python is a widely used high-level programming language for general-purpose programming."""
+word_frequencies = count_word_frequencies(text)
+print("Word Frequencies:")
+for word, frequency in word_frequencies.items():
+    print(f"{word}: {frequency}")
+
+output:
+
+Word Frequencies:
+python: 1
+is: 1
+a: 1
+widely: 1
+used: 1
+high-level: 1
+programming: 2
+language: 1
+for: 1
+general-purpose: 1
+
+
+2.	Palindrome Checker 
+Write a program that checks if a given word is a palindrome.
+
+def is_palindrome(word):
+    word = word.replace(" ", "").lower()
+    return word == word[::-1]
+word = input("Enter a word: ")
+if is_palindrome(word):
+    print(f"{word} is a palindrome.")
+else:
+    print(f"{word} is not a palindrome.")
+
+output:
+Enter a word: noon
+noon is a palindrome.
+
+Enter a word: python
+python is not a palindrome.
+
+
+3.	List Manipulation
+ Create a list of numbers, then write a program that prints the square of each number in the list.
+
+def print_square(numbers):
+    for num in numbers:
+        print(f"The square of {num} is {num**2}")
+numbers = [1, 2, 3, 4, 5]
+print_square(numbers)
+
+Output:
+The square of 1 is 1
+The square of 2 is 4
+The square of 3 is 9
+The square of 4 is 16
+The square of 5 is 25
+
+
